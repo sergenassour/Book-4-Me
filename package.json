@@ -1,0 +1,22 @@
+{
+  "name": "book-4-me",
+  "version": "1.0.0",
+  "description": "AI Booking Software",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergenassour/Book-4-Me.git"
+  },
+  "author": "Serge Nassour",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sergenassour/Book-4-Me/issues"
+  },
+  "homepage": "https://github.com/sergenassour/Book-4-Me#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

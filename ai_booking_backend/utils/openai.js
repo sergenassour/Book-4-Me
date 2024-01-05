@@ -12,4 +12,20 @@ async function getAIResponse(prompt) {
   }
 }
 
-module.exports = getAIResponse;
+// Function for intelligent appointment scheduling suggestions
+async function getSchedulingSuggestion(clientPreferences) {
+  const prompt = `Suggest an optimal appointment time based on the following client preferences: ${clientPreferences}`;
+  return getAIResponse(prompt);
+}
+
+// Function for personalized customer interactions
+async function getCustomerInteraction(clientInfo) {
+  const prompt = `Create a personalized message for a client with the following details: ${clientInfo}`;
+  return getAIResponse(prompt);
+}
+
+module.exports = {
+  getAIResponse,
+  getSchedulingSuggestion,
+  getCustomerInteraction
+};

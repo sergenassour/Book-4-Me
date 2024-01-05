@@ -7,6 +7,7 @@ const serviceRoutes = require('./routes/services');
 const cron = require('node-cron');
 const sendReminders = require('./utils/reminders'); // Ensure this path is correct
 const paymentRoutes = require('./routes/payments');
+const subscriptionRoutes = require('./routes/subscriptions');
 
 const app = express();
 app.use(bodyParser.json());
@@ -16,6 +17,7 @@ app.use('/users', userRoutes);
 app.use('/appointments', appointmentRoutes);
 app.use('/services', serviceRoutes);
 app.use('/payments', paymentRoutes);
+app.use('/subscriptions', subscriptionRoutes);
 
 // Define a simple route to check server status
 app.get('/', (req, res) => {

@@ -2,16 +2,22 @@ const express = require('express');
 const Appointment = require('../models/Appointment');
 const checkAvailability = require('../utils/checkAvailability');
 const openai = require('../utils/openai'); // Import the OpenAI utility
+const { getSchedulingSuggestion } = require('../utils/openai'); // Ensure the path is correct
 
 const router = express.Router();
 
-// Route for suggesting an optimal appointment time
-router.post('/suggest', async (req, res) => {
+router.post('/ai-schedule', async (req, res) => {
   try {
-    const { clientPreferences } = req.body;
-    const suggestion = await openai.getSchedulingSuggestion(clientPreferences);
-    res.json({ suggestion });
+    const clientDetails = req.body; // Expecting details like preferences, past bookings, etc.
+    const suggestion = await getSchedulingSuggestion(clientDetails);
+
+    if (!suggestion) {
+      return res.status(500).json({ message: "Failed to generate a suggestion" });
+    }
+
+    res.json({ schedulingSuggestion: suggestion });
   } catch (error) {
+    console.error('AI Scheduling Route Error:', error);
     res.status(500).json({ message: error.message });
   }
 });

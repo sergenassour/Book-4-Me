@@ -13,9 +13,15 @@ async function getAIResponse(prompt) {
 }
 
 // Function for intelligent appointment scheduling suggestions
-async function getSchedulingSuggestion(clientPreferences) {
-  const prompt = `Suggest an optimal appointment time based on the following client preferences: ${clientPreferences}`;
-  return getAIResponse(prompt);
+async function getSchedulingSuggestion(clientDetails) {
+  const prompt = `Given the client details: ${JSON.stringify(clientDetails)}, suggest optimal appointment times or services.`;
+  try {
+    const response = await openai.createCompletion({ model: "text-davinci-003", prompt, max_tokens: 150 });
+    return response.choices[0].text.trim();
+  } catch (error) {
+    console.error("OpenAI Scheduling Error:", error);
+    return null;
+  }
 }
 
 // Function for personalized customer interactions

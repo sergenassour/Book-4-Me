@@ -8,6 +8,8 @@ const cron = require('node-cron');
 const sendReminders = require('./utils/reminders'); // Ensure this path is correct
 const paymentRoutes = require('./routes/payments');
 const subscriptionRoutes = require('./routes/subscriptions');
+const communicationRoutes = require('./routes/communication'); // Adjust the path as necessary
+
 
 const app = express();
 app.use(bodyParser.json());
@@ -18,6 +20,8 @@ app.use('/appointments', appointmentRoutes);
 app.use('/services', serviceRoutes);
 app.use('/payments', paymentRoutes);
 app.use('/subscriptions', subscriptionRoutes);
+app.use('/communication', communicationRoutes);
+
 
 // Define a simple route to check server status
 app.get('/', (req, res) => {

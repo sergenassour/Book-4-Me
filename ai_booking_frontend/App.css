@@ -1,0 +1,55 @@
+.booking-form {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.booking-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.booking-form input,
+.booking-form select,
+.react-datepicker-wrapper {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Enhanced styles for date and time picker */
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+/* Improved styling for form fields */
+input, select, .react-datepicker-wrapper {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Tooltip or help text styling */
+.tooltip {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.error {
+  color: red;
+  margin-bottom: 15px;
+}
+
+.success {
+  color: green;
+  margin-bottom: 15px;
+}
